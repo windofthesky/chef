@@ -316,33 +316,27 @@ describe Chef::Provider::RegistryKey, "key_missing?" do
   let(:provider) { Chef::Provider::RegistryKey.new(nil, nil) }
   let(:all_keys_present_in_all_hash) do
     [ { :name => "input1_value1", :type => :string, :data => "my_value1" },
-      { :name => "input1_value2", :type => :string, :data => "my_value2" },
-    ]
+      { :name => "input1_value2", :type => :string, :data => "my_value2" }]
   end
   let(:type_key_not_present_in_any_hash) do
     [ { :name => "input2_value1", :data => "my_value1" },
-      { :name => "input2_value2", :data => "my_value2" },
-    ]
+      { :name => "input2_value2", :data => "my_value2" }]
   end
   let(:type_key_not_present_in_some_hash) do
     [ { :name => "input3_value1", :data => "my_value1" },
-      { :name => "input3_value2", :type => :string, :data => "my_value2" },
-    ]
+      { :name => "input3_value2", :type => :string, :data => "my_value2" }]
   end
   let(:data_key_not_present_in_any_hash) do
     [ { :name => "input4_value1", :type => :string },
-      { :name => "input4_value2", :type => :string },
-    ]
+      { :name => "input4_value2", :type => :string }]
   end
   let(:data_key_not_present_in_some_hash) do
     [ { :name => "input5_value1", :type => :string, :data => "my_value1" },
-      { :name => "input5_value2", :type => :string },
-    ]
+      { :name => "input5_value2", :type => :string }]
   end
   let(:only_name_key_present_in_all_hash) do
     [ { :name => "input6_value1" },
-      { :name => "input6_value2" },
-    ]
+      { :name => "input6_value2" }]
   end
 
   context "type key" do

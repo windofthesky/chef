@@ -160,7 +160,8 @@ new file
 +++ b/b_only_file DATE
 CONTEXT_LINE_NUMBERS
 +b_only_file
-' ])
+'
+])
     end
     it "Chef::ChefFS::CommandLine.diff_print(/both_dirs)" do
       results = []
@@ -202,7 +203,8 @@ new file
 +++ b/both_dirs/sub_b_only_file DATE
 CONTEXT_LINE_NUMBERS
 +sub_b_only_file
-' ])
+'
+])
     end
     it "Chef::ChefFS::CommandLine.diff_print(/) with depth 1" do
       results = []
@@ -236,7 +238,8 @@ new file
 +++ b/b_only_file DATE
 CONTEXT_LINE_NUMBERS
 +b_only_file
-' ])
+'
+])
     end
     it "Chef::ChefFS::CommandLine.diff_print(/*_*) with depth 0" do
       results = []
@@ -270,7 +273,8 @@ new file
 +++ b/b_only_file DATE
 CONTEXT_LINE_NUMBERS
 +b_only_file
-' ])
+'
+])
     end
     it "Chef::ChefFS::CommandLine.diff_print(/) in name-only mode" do
       results = []
