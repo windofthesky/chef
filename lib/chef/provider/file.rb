@@ -288,18 +288,17 @@ class Chef
       end
 
       def file_type_string(path)
-        case
-        when ::File.blockdev?(path)
+        if ::File.blockdev?(path)
           "block device"
-        when ::File.chardev?(path)
+        elsif ::File.chardev?(path)
           "char device"
-        when ::File.directory?(path)
+        elsif ::File.directory?(path)
           "directory"
-        when ::File.pipe?(path)
+        elsif ::File.pipe?(path)
           "pipe"
-        when ::File.socket?(path)
+        elsif ::File.socket?(path)
           "socket"
-        when file_class.symlink?(path)
+        elsif file_class.symlink?(path)
           "symlink"
         else
           "unknown filetype"

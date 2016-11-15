@@ -1012,12 +1012,11 @@ module ChefConfig
       cmd = Mixlib::ShellOut.new("locale -a").run_command
       cmd.error!
       locales = cmd.stdout.split
-      case
-      when locales.include?("C.UTF-8")
+      if locales.include?("C.UTF-8")
         "C.UTF-8"
-      when locales.include?("en_US.UTF-8"), locales.include?("en_US.utf8")
+      elsif locales.include?("en_US.UTF-8") || locales.include?("en_US.utf8")
         "en_US.UTF-8"
-      when locales.include?("en.UTF-8")
+      elsif locales.include?("en.UTF-8")
         "en.UTF-8"
       else
         # Will match en_ZZ.UTF-8, en_ZZ.utf-8, en_ZZ.UTF8, en_ZZ.utf8
